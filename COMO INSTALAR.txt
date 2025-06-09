@@ -1,0 +1,19 @@
+NODE:
+-npm install
+
+LARAVEL:
+-composer install
+
+SWAGGER:
+-composer require darkaonline/l5-swagger
+-php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+-php artisan make:controller SwaggerController
+-php artisan l5-swagger:generate
+-php artisan serve
+
+COMO CORRER:
+-npm run dev
+-php artisan migrate
+-php artisan serve "seguir el link"
+
+para mas informacion acceder al archivo README.md
