@@ -1,0 +1,102 @@
+.profile-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.profile-card {
+  background-color: #fffefb;
+  border: 1px solid #e1c699;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.07);
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  /*margin-bottom: 1.5rem;*/
+}
+.profile-image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centra imagen + input horizontalmente */
+  gap: 10px; /* espacio entre la imagen y el input */
+}
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #000; 
+}
+.profile-file-input {
+  margin-top: 0;
+  /* Opcional: estilos para que el botón se vea mejor */
+  cursor: pointer;
+}
+.profile-info p {
+  margin: 0.5rem 0;
+  font-size: 16px;
+}
+
+.profile-form label {
+  margin-top: 1rem;
+  display: block;
+  font-weight: bold;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.profile-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-primary {
+  background-color: #e1c699;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.profile-loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 18px;
+  color: #666;
+}

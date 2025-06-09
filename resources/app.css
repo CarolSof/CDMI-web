@@ -1,0 +1,491 @@
+body {
+    font-family: "Merriweather, serif", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.navbar {
+    background-color: rgb(129, 41, 41);
+}
+
+.navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e0e0e0;
+}
+
+.hero-section {
+    background-size: cover;
+    color: #000000;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff(206, 151, 99, 0.5);
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-section .btn-primary {
+    font-size: 1.25rem;
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: rgb(255, 193, 7);
+    color: #000;
+    border: none;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: rgb(255, 160, 0);
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+}
+
+.section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+.footer {
+    background-color: rgb(129, 41, 41);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-outline-light {
+    border-color: rgb(129, 41, 41);
+    color: rgb(129, 41, 41);
+}
+
+.btn-outline-light:hover {
+    background-color: rgb(129, 41, 41);
+    color: #fff;
+}
+/* Estilos Iniciosesion*/
+/* Estilos Iniciosesion*/
+/* Estilos Iniciosesion*/
+/* Estilos Iniciosesion*/
+/* Estilos Iniciosesion*/
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #f4f1ea;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: rgb(129, 41, 41);
+}
+
+.navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e0e0e0;
+}
+.header {
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgb(129, 41, 41);
+    color: #fff;
+}
+
+.header .carousel img {
+    height: 50vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.login-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h1 {
+    margin-bottom: 20px;
+    color: rgb(129, 41, 41);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(129, 41, 41);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: rgb(100, 30, 30);
+}
+
+.login-form a {
+    display: block;
+    margin-top: 10px;
+    color: rgb(129, 41, 41);
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+/* Estilos Nosotros*/
+/* Estilos Nosotros*/
+/* Estilos Nosotros*/
+/* Estilos Nosotros*/
+/* Estilos Nosotros*/
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #f4f1ea;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: rgb(129, 41, 41);
+}
+
+.navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #e0e0e0;
+}
+
+.section-header {
+    text-align: center;
+    margin: 40px 0;
+    color: #6d2828;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-content img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-content p {
+    text-align: justify;
+    color: #333;
+}
+
+.section-content {
+    padding: 20px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+/* Estilos Recuperarpass*/
+/* Estilos Recuperarpass*/
+/* Estilos Recuperarpass*/
+/* Estilos Recuperarpass*/
+/* Estilos Recuperarpass*/
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #f4f1ea;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #6d2828;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-brand:hover {
+    color: #e0e0e0;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #6d2828;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h1 {
+    color: #6d2828;
+}
+
+.login-form p {
+    color: #333;
+}
+
+.login-form input,
+.login-form button {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    padding: 10px;
+    background-color: #6d2828;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #5b2323;
+}
+
+.btn-outline-light {
+    border-color: #6d2828;
+    color: #6d2828;
+}
+
+.btn-outline-light:hover {
+    background-color: #6d2828;
+    color: #fff;
+}
+/* Estilos Registro */
+/* Estilos Registro */
+/* Estilos Registro */
+/* Estilos Registro */
+/* Estilos Registro */
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: #f4f1ea;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: rgb(129, 41, 41);
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #e0e0e0;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid rgb(129, 41, 41);
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h1 {
+    color: rgb(129, 41, 41);
+    margin-bottom: 20px;
+}
+
+.login-form input,
+.login-form select,
+.login-form button {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    padding: 10px;
+    background-color: rgb(129, 41, 41);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: rgb(129, 41, 41);
+}
+
+.form-check-label {
+    color: #333;
+}
+
+.btn-outline-light {
+    border-color: rgb(129, 41, 41);
+    color: rgb(129, 41, 41);
+}
+
+.btn-outline-light:hover {
+    background-color: rgb(129, 41, 41);
+    color: #fff;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    padding-right: 2.5rem;
+}
+
+.password-container .bi {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

@@ -1,0 +1,76 @@
+/* src/components/CustomStyles.css */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f4f1ea;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: rgb(129, 41, 41);
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #e0e0e0;
+  }
+  
+  .ad-sidebar {
+    width: 200px;
+    background-color: rgb(129, 41, 41);
+    padding: 20px;
+    box-sizing: border-box;
+    left: 0;
+    top: 60px;
+  }
+  
+  .ad-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .ad-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .container {
+    margin-left: 270px;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .form-label, .text-white {
+    color: rgb(129, 41, 41);
+  }
+  
+  .btn-outline-light {
+    border-color: rgb(129, 41, 41);
+    color: rgb(129, 41, 41);
+  }
+  
+  .btn-outline-light:hover {
+    background-color: rgb(129, 41, 41);
+    color: #fff;
+  }
+  

@@ -1,0 +1,70 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f4f1ea;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: rgb(129, 41, 41);
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #e0e0e0;
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #fff;
+    color: rgb(129, 41, 41);
+  }
+  
+  .pagination .page-link {
+    color: rgb(129, 41, 41);
+  }
+  
+  .pagination .page-link:hover {
+    background-color: #ffdd57;
+    color: rgb(129, 41, 41);
+  }
+  
+  .pagination .page-item.disabled .page-link {
+    color: #ccc;
+  }
+  

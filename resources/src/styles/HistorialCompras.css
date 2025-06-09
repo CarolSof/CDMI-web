@@ -1,0 +1,71 @@
+.historial-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  font-family: 'Merriweather', serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.historial-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #e1c699;
+  padding: 1.5rem;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.historial-empty {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.compra-card {
+  background: #fffefb;
+  border: 1px solid #e1c699;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.compra-card:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+.compra-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.compra-total,
+.compra-estado {
+  margin: 0.3rem 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.compra-items {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.compra-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #fdf8f3;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid #f1e2d2;
+  font-size: 15px;
+}

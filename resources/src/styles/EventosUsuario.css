@@ -1,0 +1,89 @@
+.eventos-container {
+    padding: 40px;
+    background-color: #f7f7f7;
+    font-family: 'Merriweather', serif;
+    min-height: 100vh;
+}
+
+.eventos-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    background-color: #e1c699;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.eventos-loading,
+.eventos-empty {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.evento-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.evento-card:hover {
+    transform: scale(1.02);
+}
+
+.evento-card h3 {
+    color: #a2231d;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.evento-card p {
+    color: #333;
+    margin: 6px 0;
+}
+
+.evento-botones {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-ver,
+.btn-registrarse {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ver {
+    background-color: #e1c699;
+    color: #000;
+    border: 2px solid #fff;
+}
+
+.btn-ver:hover {
+    background-color: #d1b57c;
+}
+
+.btn-registrarse {
+    background-color: #a2231d;
+    color: #fff;
+}
+
+.btn-registrarse:hover {
+    background-color: #841d16;
+}

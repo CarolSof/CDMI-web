@@ -1,0 +1,105 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f4f1ea;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: rgb(129, 41, 41);
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+  
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #f8f9fa;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #e0e0e0;
+  }
+  
+  .cart {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .item-info {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .item-info img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-control button {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .quantity-control span {
+    margin: 0 10px;
+  }
+  
+  .total {
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .login-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: rgb(129, 41, 41);
+  }
+  
+  .btn-outline-light {
+    border-color: rgb(129, 41, 41);
+    color: rgb(129, 41, 41);
+  }
+  
+  .btn-outline-light:hover {
+    background-color: rgb(129, 41, 41);
+    color: #fff;
+  }
+  
