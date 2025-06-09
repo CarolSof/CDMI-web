@@ -1,0 +1,1171 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentación de la API",
+        "description": "Documentación de la API proyecto CDMI",
+        "contact": {
+            "email": "tucorreo@ejemplo.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Iniciar sesión de usuario",
+                "description": "Inicia sesión y devuelve un token de autenticación",
+                "operationId": "a3b306d14572d1f4bd6c064b3233e7b8",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "correo",
+                                    "contraseña",
+                                    "rol"
+                                ],
+                                "properties": {
+                                    "correo": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "usuario@example.com"
+                                    },
+                                    "contraseña": {
+                                        "type": "string",
+                                        "example": "password123"
+                                    },
+                                    "rol": {
+                                        "type": "string",
+                                        "enum": [
+                                            "administrador",
+                                            "usuario"
+                                        ],
+                                        "example": "usuario"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Inicio de sesión exitoso"
+                    },
+                    "401": {
+                        "description": "Correo no registrado o contraseña incorrecta"
+                    },
+                    "403": {
+                        "description": "Rol incorrecto"
+                    },
+                    "422": {
+                        "description": "Error de validación de datos"
+                    },
+                    "500": {
+                        "description": "Error interno del servidor"
+                    }
+                }
+            }
+        },
+        "/api/verify": {
+            "get": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Verificar sesión del usuario",
+                "description": "Devuelve la información del usuario autenticado",
+                "operationId": "7b61aeb1287dc38252412e08a8c7202a",
+                "responses": {
+                    "200": {
+                        "description": "Usuario autenticado encontrado"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Autenticación"
+                ],
+                "summary": "Cerrar sesión del usuario",
+                "description": "Elimina el token de acceso del usuario autenticado",
+                "operationId": "fe8f3429cd6979b3b4517e186505f9f9",
+                "responses": {
+                    "200": {
+                        "description": "Cierre de sesión exitoso"
+                    },
+                    "401": {
+                        "description": "No autorizado"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/ayuda": {
+            "get": {
+                "tags": [
+                    "Ayuda"
+                ],
+                "summary": "Obtener todas las donaciones",
+                "description": "Devuelve un listado de todas las donaciones registradas",
+                "operationId": "cb062cc2bff062949fb632239735ae83",
+                "responses": {
+                    "200": {
+                        "description": "Listado de donaciones obtenido exitosamente"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Ayuda"
+                ],
+                "summary": "Registrar una nueva donacion",
+                "description": "Crea una nueva opción de donación",
+                "operationId": "871181857750ca69605a9db59dca478a",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "fecha",
+                                    "monto",
+                                    "causa"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "maxLength": 255,
+                                        "example": "Donación Escolar"
+                                    },
+                                    "fecha": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-04-26"
+                                    },
+                                    "monto": {
+                                        "type": "string",
+                                        "maxLength": 255,
+                                        "example": "50000"
+                                    },
+                                    "causa": {
+                                        "type": "string",
+                                        "maxLength": 255,
+                                        "example": "Apoyo a niños indígenas"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Donacion creada exitosamente"
+                    },
+                    "422": {
+                        "description": "Error en la validación de datos"
+                    }
+                }
+            }
+        },
+        "/api/ayuda/{ayudaId}/registrar-usuario": {
+            "post": {
+                "tags": [
+                    "Ayuda"
+                ],
+                "summary": "Registrar usuario en una donacion",
+                "description": "Asocia al usuario autenticado con una opción de donacion específica",
+                "operationId": "48e5c8deb0a50c7afb5dce1899669de5",
+                "parameters": [
+                    {
+                        "name": "ayudaId",
+                        "in": "path",
+                        "description": "ID de la donacion a la cual el usuario quiere donar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Donación realizada con éxito"
+                    },
+                    "404": {
+                        "description": "Opción de donacion no encontrada"
+                    },
+                    "409": {
+                        "description": "El usuario ya ha donado a esta donacion"
+                    }
+                },
+                "security": [
+                    {
+                        "sanctum": []
+                    }
+                ]
+            }
+        },
+        "/api/compra": {
+            "post": {
+                "tags": [
+                    "Compra"
+                ],
+                "summary": "Registrar una nueva compra",
+                "description": "Registra una compra con uno o varios productos",
+                "operationId": "949c99f44b74d9961b8d2f6973a51639",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "productos"
+                                ],
+                                "properties": {
+                                    "productos": {
+                                        "type": "array",
+                                        "items": {
+                                            "required": [
+                                                "id",
+                                                "name",
+                                                "price",
+                                                "quantity"
+                                            ],
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "Collar artesanal"
+                                                },
+                                                "price": {
+                                                    "type": "number",
+                                                    "format": "float",
+                                                    "example": 29.99
+                                                },
+                                                "quantity": {
+                                                    "type": "integer",
+                                                    "example": 2
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Compra registrada con éxito"
+                    },
+                    "422": {
+                        "description": "Error de validación de datos"
+                    }
+                }
+            }
+        },
+        "/api/donaciones": {
+            "get": {
+                "tags": [
+                    "Donaciones"
+                ],
+                "summary": "Listar donaciones",
+                "description": "Obtiene una lista paginada de todas las donaciones registradas",
+                "operationId": "09b45d42e458d712cd419db36c17eeb9",
+                "responses": {
+                    "200": {
+                        "description": "Lista de donaciones paginada"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Donaciones"
+                ],
+                "summary": "Registrar una nueva donación",
+                "description": "Crea una nueva donación en la base de datos",
+                "operationId": "8e3c28397006ef4e0ea926104079d3af",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "monto",
+                                    "fecha"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Juan Pérez"
+                                    },
+                                    "monto": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 100
+                                    },
+                                    "fecha": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-04-25"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Donación creada exitosamente"
+                    },
+                    "422": {
+                        "description": "Error de validación"
+                    }
+                }
+            }
+        },
+        "/api/donaciones/{id}": {
+            "get": {
+                "tags": [
+                    "Donaciones"
+                ],
+                "summary": "Obtener una donación específica",
+                "description": "Devuelve los datos de una donación específica por su ID",
+                "operationId": "2897e88df84592ddc3070e280482af4b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la donación",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detalles de la donación"
+                    },
+                    "404": {
+                        "description": "Donación no encontrada"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Donaciones"
+                ],
+                "summary": "Actualizar una donación",
+                "description": "Actualiza los datos de una donación existente",
+                "operationId": "c7761437f984138672147348ee1ab751",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la donación",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "monto",
+                                    "fecha"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Ana López"
+                                    },
+                                    "monto": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 150.5
+                                    },
+                                    "fecha": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-04-26"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Donación actualizada exitosamente"
+                    },
+                    "404": {
+                        "description": "Donación no encontrada"
+                    },
+                    "422": {
+                        "description": "Error de validación"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Donaciones"
+                ],
+                "summary": "Eliminar una donación",
+                "description": "Elimina una donación de la base de datos por su ID",
+                "operationId": "2189f9eb7b9488414cf9b38a435ed4f5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la donación",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Donación eliminada exitosamente"
+                    },
+                    "404": {
+                        "description": "Donación no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/eventos": {
+            "get": {
+                "tags": [
+                    "Eventos"
+                ],
+                "summary": "Listar todos los eventos",
+                "description": "Devuelve una lista de todos los eventos registrados",
+                "operationId": "8df3c75a189cf773a3eb105ea46e145a",
+                "responses": {
+                    "200": {
+                        "description": "Lista de eventos"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Eventos"
+                ],
+                "summary": "Crear un nuevo evento",
+                "description": "Crea un nuevo evento en la base de datos",
+                "operationId": "4594ce682158c01a68019d32f26180e1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "fecha",
+                                    "lugar"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Feria de Artesanías"
+                                    },
+                                    "fecha": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-05-01"
+                                    },
+                                    "lugar": {
+                                        "type": "string",
+                                        "example": "Centro Cultural"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Evento creado exitosamente"
+                    },
+                    "422": {
+                        "description": "Error de validación"
+                    }
+                }
+            }
+        },
+        "/api/eventos/{eventoId}/registrar-usuario": {
+            "post": {
+                "tags": [
+                    "Eventos"
+                ],
+                "summary": "Registrar un usuario en un evento",
+                "description": "Permite al usuario autenticado registrarse en un evento específico",
+                "operationId": "1c7168c70b0c4c95294c576a23e7cebd",
+                "parameters": [
+                    {
+                        "name": "eventoId",
+                        "in": "path",
+                        "description": "ID del evento",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Registro exitoso al evento"
+                    },
+                    "404": {
+                        "description": "Evento no encontrado"
+                    },
+                    "409": {
+                        "description": "El usuario ya está registrado en este evento"
+                    }
+                }
+            }
+        },
+        "/api/orders": {
+            "get": {
+                "tags": [
+                    "Órdenes"
+                ],
+                "summary": "Listar todas las órdenes",
+                "description": "Devuelve todas las órdenes, los ítems de las órdenes y los productos asociados",
+                "operationId": "2cd7e03021e72d9d799c12dfe179c865",
+                "responses": {
+                    "200": {
+                        "description": "Lista de órdenes, ítems y productos"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Órdenes"
+                ],
+                "summary": "Crear una nueva orden",
+                "description": "Permite a un usuario autenticado crear una nueva orden a partir de su carrito de compras",
+                "operationId": "d690d6834318e9b064df441e854de8b9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "fecha",
+                                    "lugar",
+                                    "productos"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Orden de compra Mayo"
+                                    },
+                                    "fecha": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2025-05-01"
+                                    },
+                                    "lugar": {
+                                        "type": "string",
+                                        "example": "Sucursal Central"
+                                    },
+                                    "total": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 150
+                                    },
+                                    "productos": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "product_id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "quantity": {
+                                                    "type": "integer",
+                                                    "example": 2
+                                                },
+                                                "price": {
+                                                    "type": "number",
+                                                    "format": "float",
+                                                    "example": 75
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Compra procesada con éxito."
+                    },
+                    "400": {
+                        "description": "El carrito está vacío o datos inválidos."
+                    }
+                }
+            }
+        },
+        "/api/carrito": {
+            "get": {
+                "tags": [
+                    "Carrito"
+                ],
+                "summary": "Obtener todo del carrito",
+                "description": "Lista todos los registros de carritos disponibles",
+                "operationId": "c76d6f9bc44482efdb2043162104aedc",
+                "responses": {
+                    "200": {
+                        "description": "Listado de carritos obtenido exitosamente"
+                    },
+                    "404": {
+                        "description": "No hay registros de carritos"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Carrito"
+                ],
+                "summary": "Crear un nuevo carrito",
+                "description": "Registra un nuevo carrito en el sistema",
+                "operationId": "bf66932e1cd9664d4d8d78fda461ffc8",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ID_Carrito",
+                                    "ID_Usuario",
+                                    "ID_Producto"
+                                ],
+                                "properties": {
+                                    "ID_Carrito": {
+                                        "type": "string",
+                                        "example": "CARR123"
+                                    },
+                                    "ID_Usuario": {
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "ID_Producto": {
+                                        "type": "integer",
+                                        "example": 5
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Carrito creado exitosamente"
+                    },
+                    "400": {
+                        "description": "Error en la validación de datos"
+                    }
+                }
+            }
+        },
+        "/api/carrito/{id}": {
+            "get": {
+                "tags": [
+                    "Carrito"
+                ],
+                "summary": "Obtener un carrito por ID",
+                "description": "Devuelve un carrito específico basado en su ID",
+                "operationId": "4a7e80928da116b96c533ede18309fd4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del carrito a buscar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Carrito encontrado exitosamente"
+                    },
+                    "404": {
+                        "description": "Carrito no encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Carrito"
+                ],
+                "summary": "Actualizar un carrito (completo)",
+                "description": "Actualiza todos los datos de un carrito específico",
+                "operationId": "a5dff0b8a294e6da2816ef3d3b07a6a9",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del carrito a actualizar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ID_Carrito",
+                                    "ID_Usuario",
+                                    "ID_Producto"
+                                ],
+                                "properties": {
+                                    "ID_Carrito": {
+                                        "type": "string",
+                                        "example": "CARR124"
+                                    },
+                                    "ID_Usuario": {
+                                        "type": "integer",
+                                        "example": 2
+                                    },
+                                    "ID_Producto": {
+                                        "type": "integer",
+                                        "example": 10
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Carrito actualizado exitosamente"
+                    },
+                    "400": {
+                        "description": "Error en la validación de datos"
+                    },
+                    "404": {
+                        "description": "Carrito no encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Carrito"
+                ],
+                "summary": "Eliminar un carrito",
+                "description": "Elimina un carrito específico basado en su ID",
+                "operationId": "10e173aaac11433290387c0d0b65a1ea",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del carrito a eliminar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Carrito eliminado exitosamente"
+                    },
+                    "404": {
+                        "description": "Carrito no encontrado"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Carrito"
+                ],
+                "summary": "Actualizar parcialmente un carrito",
+                "description": "Actualiza parcialmente los datos de un carrito específico",
+                "operationId": "a603209357dab0710037e1a79477a2b7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del carrito a actualizar parcialmente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "ID_Carrito": {
+                                        "type": "string",
+                                        "example": "CARR125"
+                                    },
+                                    "ID_Usuario": {
+                                        "type": "integer",
+                                        "example": 3
+                                    },
+                                    "ID_Producto": {
+                                        "type": "integer",
+                                        "example": 12
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Carrito actualizado parcialmente con éxito"
+                    },
+                    "400": {
+                        "description": "Error en la validación de datos"
+                    },
+                    "404": {
+                        "description": "Carrito no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/usuarios": {
+            "get": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Usuarios Registrados",
+                "operationId": "600ec787a82d08ec298424fd97dd33d9",
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Registrar un nuevo usuario",
+                "operationId": "12af6b3d715bf3099de301b50a13d0da",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "apellido",
+                                    "fecha_nacimiento",
+                                    "correo",
+                                    "telefono",
+                                    "contraseña",
+                                    "rol"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "apellido": {
+                                        "type": "string"
+                                    },
+                                    "fecha_nacimiento": {
+                                        "type": "string"
+                                    },
+                                    "correo": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "telefono": {
+                                        "type": "string"
+                                    },
+                                    "contraseña": {
+                                        "type": "string"
+                                    },
+                                    "rol": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Usuario creado exitosamente"
+                    },
+                    "400": {
+                        "description": "Error de validación"
+                    }
+                }
+            }
+        },
+        "/api/usuarios/{id}": {
+            "get": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Iniciar sesion",
+                "operationId": "27c1ad7b2797a49db722e115089c7172",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación exitosa"
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Actualizar completamente un usuario",
+                "operationId": "01c6b403efd4f7869e6703e481d4a8d7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario a actualizar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "apellido",
+                                    "fecha_nacimiento",
+                                    "correo",
+                                    "telefono",
+                                    "contraseña",
+                                    "rol"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "apellido": {
+                                        "type": "string"
+                                    },
+                                    "fecha_nacimiento": {
+                                        "type": "string"
+                                    },
+                                    "correo": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "telefono": {
+                                        "type": "string"
+                                    },
+                                    "contraseña": {
+                                        "type": "string"
+                                    },
+                                    "rol": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuario actualizado exitosamente"
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Eliminar un usuario",
+                "operationId": "811296f77edc543b83012b9455dea555",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario a eliminar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Usuario eliminado exitosamente"
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Usuarios"
+                ],
+                "summary": "Actualizar parcialmente un usuario",
+                "operationId": "39bcc7bf35ca466d3a293e87a425c665",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del usuario a actualizar parcialmente",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": false,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "apellido": {
+                                        "type": "string"
+                                    },
+                                    "fecha_nacimiento": {
+                                        "type": "string"
+                                    },
+                                    "correo": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "telefono": {
+                                        "type": "string"
+                                    },
+                                    "contraseña": {
+                                        "type": "string"
+                                    },
+                                    "rol": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuario actualizado parcialmente"
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Autenticación",
+            "description": "Autenticación"
+        },
+        {
+            "name": "Ayuda",
+            "description": "Ayuda"
+        },
+        {
+            "name": "Compra",
+            "description": "Compra"
+        },
+        {
+            "name": "Donaciones",
+            "description": "Donaciones"
+        },
+        {
+            "name": "Eventos",
+            "description": "Eventos"
+        },
+        {
+            "name": "Órdenes",
+            "description": "Órdenes"
+        },
+        {
+            "name": "Carrito",
+            "description": "Carrito"
+        },
+        {
+            "name": "Usuarios",
+            "description": "Usuarios"
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+[2025-06-09 09:12:19] local.INFO: 📤 Actualizando perfil  
+[2025-06-09 09:12:19] local.WARNING: ⚠️ No se recibió el campo nombre en la petición  
+[2025-06-09 09:19:12] local.INFO: 📤 Actualizando perfil  
+[2025-06-09 09:19:12] local.WARNING: ⚠️ No se recibió el campo nombre en la petición  
+[2025-06-09 09:28:34] local.ERROR: Route [login] not defined. {"exception":"[object] (Symfony\\Component\\Routing\\Exception\\RouteNotFoundException(code: 0): Route [login] not defined. at C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:517)
+[stacktrace]
+#0 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(853): Illuminate\\Routing\\UrlGenerator->route('login', Array, true)
+#1 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Configuration\\ApplicationBuilder.php(276): route('login')
+#2 [internal function]: Illuminate\\Foundation\\Configuration\\ApplicationBuilder->Illuminate\\Foundation\\Configuration\\{closure}(Object(Illuminate\\Http\\Request))
+#3 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(118): call_user_func(Object(Closure), Object(Illuminate\\Http\\Request))
+#4 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(105): Illuminate\\Auth\\Middleware\\Authenticate->redirectTo(Object(Illuminate\\Http\\Request))
+#5 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(88): Illuminate\\Auth\\Middleware\\Authenticate->unauthenticated(Object(Illuminate\\Http\\Request), Array)
+#6 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(62): Illuminate\\Auth\\Middleware\\Authenticate->authenticate(Object(Illuminate\\Http\\Request), Array)
+#7 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'sanctum')
+#8 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#10 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#11 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#12 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#13 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#14 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1190): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#36 C:\\Users\\User\\Downloads\\PROJECTOV2\\PROJECTbaji\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\Users\\\\User\\\\D...')
+#37 {main}
+"} 
+[2025-06-09 09:29:49] local.INFO: Nombre cambiado a: TESTING  
+[2025-06-09 09:32:39] local.DEBUG: 🧾 Formulario recibido:  
+[2025-06-09 09:32:39] local.INFO: 📤 Actualizando perfil  
+[2025-06-09 09:32:39] local.WARNING: ⚠️ No se recibió el campo nombre en la petición  
+[2025-06-09 09:33:46] local.DEBUG: 🧾 Formulario recibido:  
+[2025-06-09 09:33:46] local.INFO: 📤 Actualizando perfil  
+[2025-06-09 09:33:46] local.WARNING: ⚠️ No se recibió el campo nombre en la petición  
+[2025-06-09 09:40:03] local.DEBUG: 🧾 Formulario recibido:  
+[2025-06-09 09:40:03] local.INFO: 📤 Actualizando perfil  
+[2025-06-09 09:40:03] local.WARNING: ⚠️ No se recibió el campo nombre en la petición  
+[2025-06-09 09:50:48] local.DEBUG: 🧾 Formulario recibido: {"nombre":"TESTINGhora","apellido":"sofia","correo":"carolsofiahoyos@gmail.com","telefono":"4324231341","_method":"PUT"} 
+[2025-06-09 09:50:48] local.INFO: 📤 Actualizando perfil {"nombre":"TESTINGhora","apellido":"sofia","correo":"carolsofiahoyos@gmail.com","telefono":"4324231341","_method":"PUT"} 
+[2025-06-09 09:50:48] local.INFO: 📤 Actualizando nombre a: TESTINGhora  
+[2025-06-09 09:52:42] local.DEBUG: 🧾 Formulario recibido: {"nombre":"TESTINGhora","apellido":"sofiahoyos","correo":"carolsofiahoyos@gmail.com","telefono":"4324231341","_method":"PUT"} 
+[2025-06-09 09:52:42] local.INFO: 📤 Actualizando perfil {"nombre":"TESTINGhora","apellido":"sofiahoyos","correo":"carolsofiahoyos@gmail.com","telefono":"4324231341","_method":"PUT"} 
+[2025-06-09 09:52:42] local.INFO: 📤 Actualizando nombre a: TESTINGhora  
+[2025-06-09 09:53:18] local.DEBUG: 🧾 Formulario recibido: {"nombre":"TESTINGhora","apellido":"sofiahoyos","correo":"carolsofiahoyos@gmail.com","telefono":"4324231341","_method":"PUT","imagen_perfil":{"Illuminate\\Http\\UploadedFile":"C:\\xampp\\tmp\\phpB19C.tmp"}} 
+[2025-06-09 12:09:26] local.DEBUG: 🧾 Formulario recibido: {"nombre":"Angelito","apellido":"Gamba","correo":"gambaangel155@gmail.com","telefono":"307762303","_method":"PUT"} 
+[2025-06-09 12:09:26] local.INFO: 📤 Actualizando perfil {"nombre":"Angelito","apellido":"Gamba","correo":"gambaangel155@gmail.com","telefono":"307762303","_method":"PUT"} 
+[2025-06-09 12:09:26] local.INFO: 📤 Actualizando nombre a: Angelito  
